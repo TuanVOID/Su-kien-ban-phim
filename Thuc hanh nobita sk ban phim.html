@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ban phim</title>
+</head>
+<body style="position: relative">
+<!--<img src="Images/nobita.png" id="nobita" style="position: absolute; left:0 top:0" height="100" width="80">-->
+<img id="nobita" src="Images/nobita.png" style="position:absolute;left: 200px; top: 100px;" height="100" width="80"/>
+
+<script>
+    window.addEventListener("keydown", dichuyen)
+    function dichuyen(evt) {
+        let left = document.getElementById("nobita").style.left
+        let top = document.getElementById("nobita").style.top
+        let next1
+        let next2
+        switch (evt.key) {
+            case "d":
+                next1 = parseInt(left) + 5;
+                break;
+            case "a":
+                next1 = parseInt(left) - 5
+                break
+            case "w":
+                next2 = parseInt(top) - 5
+                break
+            case "s":
+                next2 = parseInt(top) + 5
+                break
+        }
+        document.getElementById("nobita").style.left= next1 + "px";
+        document.getElementById("nobita").style.top = next2 + "px";
+    }
+</script>
+</body>
+</html>
